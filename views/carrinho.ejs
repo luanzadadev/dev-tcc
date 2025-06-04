@@ -1,0 +1,14 @@
+<h1>Carrinho</h1>
+<ul>
+  <% carrinho.forEach(item => { %>
+    <li>
+      <strong><%= item.nome %></strong> - R$ <%= item.preco.toFixed(2) %>
+      <form action="/remover/<%= item.id %>" method="POST" style="display:inline;">
+        <button type="submit">Remover</button>
+      </form>
+    </li>
+  <% }); %>
+</ul>
+
+<h2>Total: R$ <%= total.toFixed(2) %></h2>
+<a href="/">Voltar à Home</a>

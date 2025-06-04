@@ -1,0 +1,17 @@
+<h1>Produtos</h1>
+<ul>
+  <% produtos.forEach(prod => { %>
+    <li>
+      <strong><%= prod.nome %></strong> - R$ <%= prod.preco.toFixed(2) %>
+      <form action="/reservar/<%= prod.id %>" method="POST" style="display:inline;">
+        <button type="submit">Reservar</button>
+      </form>
+    </li>
+  <% }); %>
+</ul>
+<a href="/carrinho">Ver Carrinho</a> 
+
+<!-- mais semantico -->
+
+
+<!-- isso são os testes unitarios que eu falei, criar uma função -->
